@@ -1,0 +1,45 @@
+#root {
+  font-family: 'Roboto', sans-serif;
+}
+
+.welcome {
+  font-family: 'Shrikhand', cursive;
+  text-align: center;
+}
+
+.car-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.single-car {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid lightslategray;
+}
+
+.single-car a {
+  color: white
+}
+
+table, tr, td {
+  border: 1px solid lightslategray;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding: 1rem;
+}
+
+.category {
+  font-weight: bolder;
+}

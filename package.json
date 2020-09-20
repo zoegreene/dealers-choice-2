@@ -1,0 +1,33 @@
+{
+  "name": "dealers-choice-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:dev": "npm run build -- --watch --mode development",
+    "start:dev": "nodemon server --ignore dist/ --ignore src/ & npm run build:dev",
+    "start": "npm run build & node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "axios": "^0.20.0",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
