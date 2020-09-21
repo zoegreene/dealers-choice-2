@@ -15,10 +15,10 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// POST /api/cars/create
-router.post('/create', async (req, res, next) => {
+// POST /api/cars
+router.post('/', async (req, res, next) => {
   try {
-    const newCar = await Cars.findOrCreate(req.body);
+    const newCar = await Car.create(req.body);
     res.status(201).send(newCar);
   }
   catch(err) {
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     const car = await Car.findByPk(req.params.id);
-    await Car.destroy(car);
+    await car.destroy();
     res.sendStatus(204);
   }
   catch(err) {

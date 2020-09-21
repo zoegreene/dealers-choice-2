@@ -19,9 +19,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/cars', router);
 
-app.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-});
+// app.get('/', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+// });
 
 // 404 handler
 app.use((req, res, next) => {
@@ -36,10 +36,11 @@ app.use((err, req, res, next) => {
   res.send(err.message || 'Internal server error');
 });
 
+const PORT = process.env.PORT || 3000;
+
 const init = async () => {
   try {
     await db.syncAndSeed();
-    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
       console.log(`App is listening on port ${PORT}`);
     });
