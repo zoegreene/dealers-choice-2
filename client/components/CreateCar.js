@@ -42,15 +42,7 @@ class CreateCar extends React.Component {
     const { model, manufacturer, type, color, description } = this.state;
     const { change, submit } = this;
     return (
-      <UpdateForm
-        model={ model }
-        manufacturer={ manufacturer }
-        type={ type }
-        color={ color }
-        description={ description }
-        change={ change }
-        submit={ submit }
-      />
+      <UpdateForm car={ this.state } change={ change } submit={ submit } />
     )
   }
 }

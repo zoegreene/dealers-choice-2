@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { updateCar, destroyCar, setCar } from '../store'
 import UpdateForm from './UpdateForm';
 
@@ -18,12 +17,9 @@ class SingleCar extends React.Component {
     this.submit = this.submit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.load(this.props.match.params.id)
-  }
-
-  componentDidUpdate() {
-
+  async componentDidMount() {
+    await this.props.load(this.props.match.params.id);
+    this.setState({...this.props.car});
   }
 
   change(event) {
@@ -56,11 +52,9 @@ class SingleCar extends React.Component {
   render() {
     const car = this.props.car;
     return (
-
       <div>
-        <h1 className='welcome'>{ car.model }</h1>
-        <UpdateForm model={ this.state.model } manufacturer={ this.state.manufacturer }
-            type={ this.state.type } color={ this.state.color } description={ this.state.description } change={ this.change } submit={ this.submit }/>
+        <h1 className='welcome'>{ this.state.model }</h1>
+        <UpdateForm car={this.state} change={ this.change } submit={ this.submit }/>
         <div className='button-container'>
           <button onClick={ () => this.props.destroyCar({ id: car.id, history: this.props.history }) }>DELETE</button>
         </div>

@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
+import logger from 'redux-logger';
 
 const SET_CARS = 'SET_CARS';
 const SET_CAR = 'SET_CAR';
@@ -103,7 +104,7 @@ const reducer = combineReducers({
   car: carReducer
 });
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 export default store;
 export { setCars, setCar, updateCar, destroyCar, createCar };

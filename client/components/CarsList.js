@@ -18,7 +18,6 @@ const CarsList = ({ cars }) => {
         })}
         </div>
       </div>
-
   )
 }
 

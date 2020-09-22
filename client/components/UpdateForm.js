@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UpdateForm = ({ model, manufacturer, type, color, description, change, submit }) => {
+const UpdateForm = ({ car, change, submit }) => {
+  const { model, manufacturer, type, color, description } = car;
   return (
     <form onSubmit={ submit }>
       <div>
